@@ -18,10 +18,8 @@ pipeline {
                         echo "Checking node and npm versions"
                         node --version
                         npm --version
-                        echo "Installing dependencies with npm install"
-                        npm install 
-                        echo "Building project"
-                        npm run build || { echo "Build failed"; exit 1; }
+                        npm ci
+                        npm run build
                     '''
                 }
             }
