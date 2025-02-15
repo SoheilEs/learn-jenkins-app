@@ -18,8 +18,8 @@ pipeline {
                         echo "Checking node and npm versions"
                         node --version
                         npm --version
-                        echo "Installing dependencies with npm ci"
-                        npm install --force || { echo "npm ci failed"; cat /home/node/.npm/_logs/*.log; exit 1; }
+                        echo "Installing dependencies with npm install"
+                        npm install 
                         echo "Building project"
                         npm run build || { echo "Build failed"; exit 1; }
                     '''
