@@ -11,12 +11,15 @@ pipeline {
             }
             steps {
                 sh '''
-                    ls -la
+                    echo "Clearing npm cache"
+                    npm cache clean --force
+                    echo "Checking node and npm versions"
                     node --version
                     npm --version
-                    npm install 
+                    echo "Installing dependencies with npm ci"
+                    npm ci || cat /home/node/.npm/_logs/*.log
+                    echo "Building project"
                     npm run build
-                    ls -la
                 '''
             }
         }
