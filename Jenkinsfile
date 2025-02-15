@@ -19,7 +19,7 @@ pipeline {
                         node --version
                         npm --version
                         echo "Installing dependencies with npm ci"
-                        npm ci || { echo "npm ci failed"; cat /home/node/.npm/_logs/*.log; exit 1; }
+                        npm install --force || { echo "npm ci failed"; cat /home/node/.npm/_logs/*.log; exit 1; }
                         echo "Building project"
                         npm run build || { echo "Build failed"; exit 1; }
                     '''
