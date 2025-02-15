@@ -13,12 +13,9 @@ pipeline {
                 script {
                     // Ensure npm cache is cleared before installing dependencies
                     sh '''
-                        echo "Clearing npm cache"
-                        npm cache clean --force
                         echo "Checking node and npm versions"
                         node --version
                         npm --version
-                        npm ci
                         npm run build
                     '''
                 }
