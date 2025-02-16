@@ -10,7 +10,6 @@ pipeline {
                 }
             }
             steps {
-                script {
                     // Ensure npm cache is cleared before installing dependencies
                     sh '''
                         ls -la
@@ -21,7 +20,7 @@ pipeline {
                         npm run build
                         ls -la
                     '''
-                }
+                
             }
         }
     }
