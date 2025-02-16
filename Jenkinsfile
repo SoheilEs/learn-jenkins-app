@@ -10,8 +10,7 @@ pipeline {
                 }
             }
             steps {
-                    // Ensure npm cache is cleared before installing dependencies
-                    sh '''
+                sh'''
                         ls -la
                         echo "Checking node and npm versions"
                         node --version
