@@ -14,6 +14,7 @@ pipeline {
                     node --version
                     npm --version
                     npm ci
+                    npm install react-scripts --save
                     npm run build
                     ls -la
                 '''
