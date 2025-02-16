@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
            agent {
@@ -23,5 +22,6 @@ pipeline {
                     ls -la
                 '''
             }
+        }
     }
 }
